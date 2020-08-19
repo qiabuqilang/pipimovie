@@ -1,6 +1,6 @@
 package com.pipimovie.error;
 
-public class BusinessException extends Exception implements CommonError {
+public class BussinessException extends Exception implements CommonError {
     //emun
     private CommonError commonError;
 
@@ -11,7 +11,7 @@ public class BusinessException extends Exception implements CommonError {
     }
 
     //接收自定义errMsg的方式构造业务异常（通过覆盖原本errMsg）
-    public BussinessException(CommonError commonError,String errMsg) {
+    public BussinessException(CommonError commonError, String errMsg) {
         super();
         this.commonError = commonError;
         this.commonError.setErrMsg(errMsg);

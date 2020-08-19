@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <!--<classPathEntry location="/Program Files/IBM/SQLLIB/java/db2java.zip" />-->
+
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!--数据库连接地址账号密码-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/seacms"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+
+        <javaTypeResolver >
+        <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!--生成Model/DataObject类存放的位置-->
+
+        <javaModelGenerator targetPackage="com.pipimovie.dataobject" targetProject="src/main/java">
+            <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
+            <property name="enableSubPackages" value="false"/>
+            <!-- 是否对model添加 构造函数 -->
+            <property name="constructorBased" value="true"/>
+            <!-- 是否对类CHAR类型的列的数据进行trim操作 -->
+            <property name="trimStrings" value="true"/>
+            <!-- 建立的Model对象是否 不可改变  即生成的Model对象不会有 setter方法，只有构造方法 -->
+            <property name="immutable" value="false"/>
+        </javaModelGenerator>
+        <!--生成映射文件存放的位置-->
+        <sqlMapGenerator targetPackage="mapping"  targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!--生成Dao类存放的位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.pipimovie.dao"  targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+
+        <!--生成对应表及类名-->
+        <table tableName="sea_admin" domainObjectName="AdminDO" enableCountByExample="false"
+        enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+        selectByExampleQueryId="false"></table>
+
+        <table tableName="sea_arcrank" domainObjectName="ArcrankDO" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <columnOverride column="purviews" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sea_buy" domainObjectName="BuyDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="sea_cck" domainObjectName="CCKDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="sea_co_cls" domainObjectName="CoclsDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="sea_co_config" domainObjectName="CoconfigDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="sea_co_data" domainObjectName="CodataDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="sea_co_filters" domainObjectName="CofiltersDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="sea_co_news" domainObjectName="ConewsDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="n_content" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sea_co_type" domainObjectName="CotypeDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="listconfig" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="itemconfig" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sea_co_url" domainObjectName="CourlDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="sea_comment" domainObjectName="CommentDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="msg" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sea_content" domainObjectName="ContentDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="sea_count" domainObjectName="CountDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="body" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sea_crons" domainObjectName="CronsDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="sea_data" domainObjectName="DataDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="v_extratype" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="v_jq" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="v_longtxt" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sea_erradd" domainObjectName="ErraddDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="errtxt" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sea_favorite" domainObjectName="FavoriteDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="sea_flink" domainObjectName="FlinkDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="sea_guestbook" domainObjectName="GuestbookDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="msg" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sea_ie" domainObjectName="IEDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="sea_jqtype" domainObjectName="JqtypeDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="sea_jqtype" domainObjectName="JqtypeDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="sea_member" domainObjectName="MemberDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="msgbody" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sea_member_group" domainObjectName="MemberGroupDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="sea_myad" domainObjectName="MyadDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="adsbody" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sea_mytag" domainObjectName="MytagDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="tagcontent" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sea_news" domainObjectName="NewsDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="n_content" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sea_playdata" domainObjectName="PlaydataDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="body" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="body1" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sea_search_keywords" domainObjectName="SearchKeywordsDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="sea_tags" domainObjectName="TagsDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="vids" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sea_temp" domainObjectName="TempDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="v_playdata" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="v_des" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sea_topic" domainObjectName="TopicDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="des" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="vod" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="keyword" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sea_type" domainObjectName="TypeDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="unionid" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="sea_zyk" domainObjectName="ZykDO" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+    </context>
+</generatorConfiguration>

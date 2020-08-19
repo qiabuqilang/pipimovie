@@ -1,6 +1,6 @@
 package com.pipimovie.service.businessobject;
 
-public class PlayDataModel {
+public class PlayDataBO {
     private String name;
     private String type;
     private String url;
@@ -36,5 +36,15 @@ public class PlayDataModel {
 
     public void setRealUrl(String realUrl) {
         this.realUrl = realUrl;
+    }
+
+    @Override
+    public String toString() {
+        return "PlayDataBO{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", url='" + url + '\'' +
+                ", realUrl='" + realUrl + '\'' +
+                '}';
     }
 }
